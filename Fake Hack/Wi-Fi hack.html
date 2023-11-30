@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8"></meta>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<title>Wi-Fi Hacker</title>
+<style>
+.contain{
+font-family: 'VT323', monospace;
+border:2px solid black;
+box-sizing:border-box;
+width:300px;
+height:500px;
+margin: auto;
+padding:10px;
+background-image: linear-gradient(60deg,#129bd3eb,white,#129bd3eb);
+border-radius: 0px 0px 5px 5px;
+}
+
+h3{
+background-color:#0080ff;
+color:white;
+padding:5px;
+width:286px;
+margin:auto;
+border-radius:5px 5px 0px 0px;
+border:2px solid black;
+border-bottom:0px;
+}
+
+.main::before{
+content:"";
+background:url("pic.jpg") no-repeat center center/cover;
+height:100vh;
+width:100%;
+top:0px;
+left:0px;
+position:absolute;
+z-index:-1;
+opacity:0.5;
+}
+
+legend{
+font-size:15px;
+}
+
+#indiv{
+box-shadow:0px 0px 1px 1px black;
+padding:7px;
+font-size:15px;
+background-color:white;
+}
+
+.inp{
+width:90%;
+}
+
+#btn{
+width:60%;
+padding:1px;
+background-color:#26c9ff;
+font-weight:bold;
+border-radius: 10px;
+margin-top:3px;
+}
+
+.psize{
+font-size:20px;
+margin:0 0;
+}
+
+#prog{
+width:90%;
+height:10px;
+display:none;
+}
+
+progress:after {
+ content: attr(value)'%';
+}
+
+#field{
+padding:3px;
+height:380px;
+border:1px dotted black;
+}
+</style>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"></link>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"></link>
+<link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com" rel="preconnect"></link>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"></link>
+</head>
+
+
+<body>
+<div class="main">
+<h3>Wi-Fi Hacker</h3>
+<div class="contain">
+<fieldset>
+<legend>Enter details</legend>
+<div id="indiv">
+<div> <input class="inp" id="inp" type="text" placeholder="Enter the Wi-Fi username"/> </div>
+<button id="btn" onclick="hacker()">Fetch Password</button>
+</div>
+</fieldset>
+
+<fieldset id="field">
+<legend>Progress</legend>
+<progress id="prog" max="100" value="0"></progress>
+<div class="psize" id="pid"></div>
+<div class="psize" id="pid1"></div>
+<div class="psize" id="pid2"></div>
+<div class="psize" id="pid3"></div>
+<div class="psize" id="pid4"></div>
+<div class="psize" id="pid5"></div>
+<div class="psize" id="pid6"></div>
+</fieldset>
+</div>
+</div>
+
+<script>
+function hacker(){
+let inp=document.getElementById("inp").value;
+if(inp==null||inp==""){
+alert("Enter the username");
+}
+else{
+document.getElementById("prog").style.display="block";
+setTimeout(
+()=>{
+document.getElementById("pid").innerHTML="Fetching the ID of the username "+inp+", please wait...";
+document.getElementById("prog").value=13;
+},2000);
+setTimeout(
+()=>{
+document.getElementById("pid1").innerHTML="MAC address of the user "+inp+" has been found.";
+document.getElementById("prog").value=27;
+},6000);
+setTimeout(
+()=>{
+document.getElementById("pid2").innerHTML="Fetching the ID details...";
+document.getElementById("prog").value=46;
+},10000);
+setTimeout(
+()=>{
+document.getElementById("pid3").innerHTML="WPA2 password has been fetched.";
+document.getElementById("prog").value=69;
+},14000);
+setTimeout(
+()=>{
+document.getElementById("pid4").innerHTML="Hacking complete, showing result...";
+document.getElementById("prog").value=87;
+},18000);
+setTimeout(()=>{
+let alpha=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+let num=['0','1','2','3','4','5','6','7','8','9']
+var alres="";
+var numres="";
+for(i=0;i<=4;i++){
+var randomalpha=alpha[Math.floor(Math.random()*alpha.length)];
+var randomnum=num[Math.floor(Math.random()*num.length)];
+var alres=alres.concat(randomalpha);
+var numres=numres.concat(randomnum);
+}
+var finalres=alres.concat(numres);
+document.getElementById("pid5").innerHTML="The Wi-Fi password of the username "+inp+" is- "+finalres;
+document.getElementById("prog").value=100;
+},20000)
+setTimeout(()=>{
+document.getElementById("pid6").innerHTML="Ha!Ha! Got you &#128512, Its a fake hacking created by Atanu &#128516 &#128516";
+},28000)
+}
+}
+</script>
+</body> 
+</html>

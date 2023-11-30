@@ -1,0 +1,257 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8"></meta>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<title>Hackerman</title>
+<style>
+body{
+background-color:black;
+}
+.partition{
+display:grid;
+grid-template-columns:20% 60% 20%;
+}
+.left{
+height:100vh;
+width:100%;
+}
+.right{
+height:100vh;
+width:100%;
+
+}
+.nums{
+width:100%;
+margin:0px;
+word-wrap:break-word;
+font-size:24px;
+font-weight:bold;
+color:green;
+font-family: 'VT323', monospace;
+}
+.main{
+margin:0px 20px;
+    border: 1px solid green;
+    padding: 10px;
+	height:90vh;
+}
+.main::before{
+content:"";
+background: url('https://cdn3.vectorstock.com/i/1000x1000/34/32/hacker-in-dark-vector-33643432.jpg') no-repeat center center/cover;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+opacity:0.2;
+}
+h3{
+color:white;
+font-family: 'VT323', monospace;
+text-align:center;
+margin-top:0;
+}
+
+.inp{
+background-color:black;
+color:green;
+font-size:20px;
+border:1px solid green;
+outline:none;
+border-radius:5px;
+font-family: 'VT323', monospace;
+width:46%;
+}
+::placeholder{
+color:green;
+}
+
+#btn{
+background-color:black;
+font-size:15px;
+font-weight:bold;
+margin-top:3px;
+color:green;
+border:1px solid green;
+padding:5px;
+border-radius:100px;
+font-family: 'VT323', monospace;
+}
+
+.psize{
+font-size:15px;
+margin:0 0;
+}
+
+#prog{
+width:95%;
+height:20px;
+color:green;
+display:none;
+background-color:green;
+margin-top:10px;
+}
+#prog1{
+width:40%;
+height:10px;
+color:green;
+display:none;
+background-color:green;
+margin-top:10px;
+}
+#prog2{
+width:40%;
+height:10px;
+color:green;
+display:none;
+background-color:green;
+margin-top:10px;
+}
+
+.psize{
+font-size:25px;
+font-family: 'VT323', monospace;
+color:green;
+margin-top:20px;
+}
+
+h3{
+color:green;
+font-size:30px;
+text-align:center;
+}
+</style>
+<link href="https://fonts.googleapis.com" rel="preconnect"></link>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"></link>
+<link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com" rel="preconnect"></link>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"></link>
+<link href="https://fonts.googleapis.com/css2?family=Lora&amp;display=swap" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet"></link>
+</head>
+
+<body>
+<div class="partition">
+<div class="left"><div class="nums"> <div id="id1">101001010010100101101001010010100101001010010010100100101001010010110100101001010010100101001010010110010110100101001010010100101001010010110010100101001001000110000100100010010000010010001010101000101010000010001010100101001011010010100101001010010100101001010011100100101101001010010100000010001001001011010000010010001010101000101010000010001010100101001011010010100101001010010100101001010011100100101101001010010100001101001010010100101001001000100001010001001000101010100010101000001000101010010100101101001010010100101001010010100101001110010111010010100101001101001010010100101001010110100101001010000001000100100100001001000101010100010101000001000101010010100000101010000010001010100101001010
+</div>
+<div id="id2" style="display:none">010010100101001010010010001000010111010010100101001101001010010100101001001000100001010110010100111001001011010010100101000000100010010010110000100010010001010101000101010000010001010100101001011010010100101001010010100101001010011100100101101001010010100000010001001001011010010100101001101001010010100101001001000100001010010001010101000101010000010001010100101001011010010100101001010010100101001100001010100111001001011010010100101000000100010010010110100101001010011010010100101001010010010001000010110010100101001001000100001011001010010100100100100011010111010010100101001101001010010100101001010100101001010010010001000010111010010100101001101001010010100101001001101001010010100101001100101001
+</div>
+</div></div>
+<div class="main">
+<h3>GreenHat HackerMan Protocol</h3>
+<input class="inp" id="inp" type="text" placeholder="Enter the system model number"/>
+<input class="inp" id="con" type="text" placeholder="Enter the system SKU"/>
+<button id="btn" onclick="hacker()">PATCH</button>
+
+<progress id="prog" max="100" value="0"></progress>
+
+<div class="psize" id="pid"></div>
+<div class="psize" id="pid1"></div>
+<div class="psize" id="pid2"></div>
+<progress id="prog2" max="100" value="0"></progress>
+<div class="psize" id="pid3"></div>
+<div class="psize" id="pid4"></div>
+<div class="psize" id="pid5"></div>
+<div class="psize" id="pid6"></div>
+<progress id="prog1" max="100" value="0"></progress>
+<div class="psize" id="pid7"></div>
+</div>
+<div class="right"><div class="nums"> <div id="id3">010010100101001010010010001000010111010010100101001101001010010100101001001000100001010110010100111001001011010010100101000000100010010010110000100010010001010101000101010000010001010100101001011010010100101001010010100101001010011100100101101001010010100000010001001001011010010100101001101001010010100101001001000100001010010001010101000101010000010001010100101001011010010100101001010010100101001100001010100111001001011010010100101000000100010010010110100101001010011010010100101001010010010001000010110010100101001001000100001011001010010100100100100011010010100101001010010010001000010111010010100101001101001010010100001010101000101010000010001010100101000001010100000100010101001010010100101001
+</div><div id="id4" style="display:none">101001010010100101101001010010100101001010010010100100101001010010110100101001010010100101001010010110010110100101001010010100101001010010110010100101001001000110000100100010010000010010001010101000101010000010001010100101001011010010100101001010010100101001010011100100101101001010010100000010001001001011010000010010001010101000101010000010001010100101001011010010100101001010010100101001010011100100101101001010010100001101001010010100101001001000100001010001001000101010100010101000001000101010010100101101001010010100101001010010100101001110010010110100101001010000001000100100100001001000101010000101010100010101000001000100100101000001010100000100010101001010010101000101010000010001010100101000
+</div></div></div>
+</div>
+<script>
+function hacker(){
+let inp=document.getElementById("inp").value;
+let con=document.getElementById("con").value;
+if(inp==null||inp==""){
+alert("Enter the model number");
+}
+else if(con==null||con==""){
+alert("Enter the system SKU");
+}
+else{
+setInterval(()=>{
+document.getElementById("id1").style.display="block";
+document.getElementById("id2").style.display="none";
+},100);
+setInterval(()=>{
+document.getElementById("id1").style.display="none";
+document.getElementById("id2").style.display="block";
+},300);
+
+setInterval(()=>{
+document.getElementById("id3").style.display="block";
+document.getElementById("id4").style.display="none";
+},100);
+setInterval(()=>{
+document.getElementById("id3").style.display="none";
+document.getElementById("id4").style.display="block";
+},300);
+
+document.getElementById("prog").style.display="block";
+document.getElementById("btn").innerText="STOP";
+setTimeout(
+()=>{
+document.getElementById("pid").innerHTML="Fetching the BIOS ID of the system model number "+inp+", please wait...";
+document.getElementById("prog").value=7;
+},2000);
+setTimeout(
+()=>{
+document.getElementById("pid1").innerHTML="BIOS ID of the model number- "+inp+" has been found...";
+document.getElementById("prog").value=18;
+},6000);
+setTimeout(
+()=>{
+document.getElementById("pid2").innerHTML="Breaking the firewalls...";
+document.getElementById("prog").value=27;
+document.getElementById("prog2").style.display="block";
+setInterval(()=>{
+document.getElementById("prog2").value+=1;
+},50)
+},10000);
+setTimeout(
+()=>{
+document.getElementById("pid3").innerHTML="Access granted...";
+document.getElementById("prog").value=43;
+},16000);
+setTimeout(
+()=>{
+document.getElementById("pid4").innerHTML="Hacking complete. Accessing the files now...";
+document.getElementById("prog").value=67;
+},20000);
+setTimeout(()=>{
+let alpha=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+let num=['0','1','2','3','4','5','6','7','8','9']
+var alres="";
+var numres="";
+for(i=0;i<=5;i++){
+var randomalpha=alpha[Math.floor(Math.random()*alpha.length)];
+var randomnum=num[Math.floor(Math.random()*num.length)];
+var alres=alres.concat(randomalpha);
+var numres=numres.concat(randomnum);
+}
+var finalres=alres.concat(numres);
+document.getElementById("pid5").innerHTML="The access key of the system model number- "+inp+" is "+finalres;
+document.getElementById("prog").value=83;
+},22000)
+
+setTimeout(()=>{
+document.getElementById("pid6").innerHTML="Downloading the files now...";
+document.getElementById("prog1").style.display="block";
+setInterval(()=>{
+document.getElementById("prog1").value+=1;
+},200)
+document.getElementById("prog").value=100;
+},26000)
+
+setTimeout(()=>{
+document.getElementById("pid7").innerHTML="Ha!Ha! Got you &#128512, Its a fake hacking created by Atanu &#128516 &#128516";
+},48000)
+}
+}
+</script>
+</body>
+</html>

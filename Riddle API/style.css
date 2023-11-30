@@ -1,0 +1,48 @@
+.contain {
+  background: linear-gradient(
+    47deg,
+    rgba(58, 79, 180, 1) 0%,
+    rgba(29, 225, 253, 1) 50%,
+    rgba(69, 252, 195, 1) 100%
+  );
+  width: 80%;
+  height: 75vh;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 20px 20px 20px 0px grey;
+  padding: 5%;
+}
+.btn {
+  color: black;
+  height: 10%;
+  border: none;
+  border-radius: 5px;
+  outline: groove;
+  margin: auto 40%;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  background: #1ABC9C;
+  box-shadow: 0px 0px 5px 1px grey;
+}
+.btn:hover {
+  box-shadow: none;
+}
+.para1 {
+  color: black;
+  font-size: 23px;
+  box-shadow: 1px 1px 5px black;
+  padding: 20px;
+  border-radius: 20px;
+  height: 45vh;
+  box-sizing: border-box;
+}
+.para2 {
+  color: black;
+  font-size: 23px;
+  padding: 20px;
+  border-radius: 20px;
+  height: 25vh;
+  box-sizing: border-box;
+}

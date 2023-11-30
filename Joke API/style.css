@@ -1,0 +1,22 @@
+.flex {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.contain {
+  width: 30%;
+  height: 50vh;
+  margin: auto;
+  padding: 10px;
+}
+.btn {
+  width: 22vw;
+}
+.card {
+  margin-top: 5px;
+}
+.card-body{
+  height: 35vh;
+  overflow:auto;
+  
+}
